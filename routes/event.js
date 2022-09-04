@@ -141,7 +141,7 @@ router.get("/email/:random_code", async (req, res) => {
       arr.push(data1.email);
     }
     for (i = 0; i < arr.length; i++) {
-      sendVerificationMail1(arr[i], req.body.subject, req.body.context);
+      sendVerificationMail1(arr[i], req.query.subject, req.query.context);
     }
     res.json(arr);
   } catch (error) {

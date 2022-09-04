@@ -110,7 +110,7 @@ router.get("/email", async (req, res) => {
       arr.push(data[i]["email"]);
     }
     for (i = 0; i < arr.length; i++) {
-      sendVerificationMail1(arr[i], req.body.subject, req.body.context);
+      sendVerificationMail1(arr[i], req.query.subject, req.query.context);
     }
     res.json(arr);
   } catch (error) {
